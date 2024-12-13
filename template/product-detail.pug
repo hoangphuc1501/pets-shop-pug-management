@@ -1,0 +1,101 @@
+extends ../layouts/default.pug
+include ../mixins/breakcumb.pug
+include ../mixins/box-head.pug
+include ../mixins/product-item.pug
+block title
+    title Chi tiết sản phẩm
+
+
+block main
+    //- product-info
+    .product-info
+        .container  
+            .product-info__wrap 
+                .product-info__left 
+                    .product-info__images-main 
+                        img(src="assets/image/sec-6-image 2.jpg" alt="")
+                    .product-info__images-thumb
+                        img(src="assets/image/sec-6-image 4.jpg" alt="")
+                        img(src="assets/image/sec-6-image 3.jpg" alt="")
+                        img(src="assets/image/sec-6-image 5.jpg" alt="")
+                        img(src="assets/image/sec-6-image 6.jpg" alt="")
+                        img(src="assets/image/sec-6-image 7.jpg" alt="")
+                .product-info__right
+                    -
+                        var breadcrumb = [
+                            {
+                                link: '#',
+                                title: 'Trang chủ'
+                            },
+                            {
+                                link: '#',
+                                title: 'Chó'
+                            },
+                            {
+                                link: '#',
+                                title: 'Chó nhỏ'
+                            },
+                            {
+                                link: '#',
+                                title: 'Shiba Inu Màu Nâu Đỏ'
+                            }
+                        ]
+                    //- Breadcrumb 
+                    +breakcumb(breadcrumb)
+                    //- end Breadcrumb
+                    h1.product-info__title Shiba Inu Màu Nâu Đỏ
+                    .product-info__price 12.000.000 VND
+                    .product-info__button 
+                        a(href="#" class="button") Liên hệ
+                        a(href="#" class="button button--outline") 
+                            <i class="fa-regular fa-message"></i> 
+                            | Chat với Monito
+                    .product-info__table 
+                        table 
+                            tbody 
+                                tr 
+                                    td SKU
+                                    td #1000078
+                                tr 
+                                    td Giống
+                                    td Cái
+                                tr 
+                                    td Tuổi
+                                    td 2 tháng
+                                tr 
+                                    td Kích thước
+                                    td Nhỏ
+                                tr 
+                                    td Màu sắc
+                                    td Nâu đỏ
+                                tr 
+                                    td Mô tả ngắn
+                                    td.
+                                        Giống thuần chủng Shih Tzu. Cấu trúc cơ thể
+                                        tốt. Với chứng chỉ MKA và Microchip. Cha từ
+                                        dòng dõi vô địch.
+                    nav.box-share
+                        .box-share__label <i class="fa-solid fa-share-nodes"></i> Chia sẻ:
+                        ul.box-share__list
+                            li 
+                                a(href="") <i class="fa-brands fa-facebook"></i>
+                            li 
+                                a(href="") <i class="fa-brands fa-twitter"></i>
+                            li 
+                                a(href="") <i class="fa-brands fa-instagram"></i>
+                            li 
+                                a(href="") <i class="fa-brands fa-youtube"></i>
+                //- end product-info
+    // section-2
+    .section-2
+        .container
+            +box-head(
+                "Có gì mới?",
+                "Xem thêm chó con"
+            )
+            .section-2__wrap
+                +product-item()
+                +product-item()
+                +product-item()
+                +product-item()
+    // end section-2           

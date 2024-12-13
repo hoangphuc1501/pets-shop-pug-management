@@ -1,0 +1,102 @@
+extends ../layouts/default.pug
+include ../mixins/breakcumb.pug
+include ../mixins/product-item.pug
+block title
+    title Danh sách sản phẩm
+block main
+    -
+        var breadcrumb = [
+            {
+                link: '#',
+                title: 'Trang chủ'
+            },
+            {
+                link: '#',
+                title: 'Chó'
+            },
+            {
+                link: '#',
+                title: 'Chó nhỏ'
+            }
+        ]
+    //- Breadcrumb 
+    +breakcumb(breadcrumb, "container")
+    //- end Breadcrumb
+
+    //- section-3
+    include ../partials/section-3.pug
+    //- end section-3
+
+    //- section-product
+    .section-product
+        .container  
+            .section-product__wrap
+                .section-product__left
+                    .filter
+                        .filter__title 
+                            i.fa-solid.fa-filter 
+                            | Bộ lọc
+                        .filter__list 
+                            .filter__item 
+                                .filter__item-title Giống 
+                                .filter__item-box
+                                    .filter__item-choose
+                                        input(type="checkbox" )
+                                        label(for="") Đực 
+                                    .filter__item-choose
+                                        input(type="checkbox" )
+                                        label(for="") Cái
+                            .filter__item 
+                                .filter__item-title Màu sắc
+                                .filter__item-box
+                                    .filter__item-choose
+                                        input(type="checkbox" )
+                                        label(for="") Xám 
+                                    .filter__item-choose
+                                        input(type="checkbox" )
+                                        label(for="") Đen
+                                    .filter__item-choose
+                                        input(type="checkbox" )
+                                        label(for="") Trắng
+                            .filter__item 
+                                .filter__item-title Kích thước
+                                .filter__item-box
+                                    .filter__item-choose
+                                        input(type="checkbox" )
+                                        label(for="") Nhỏ
+                                    .filter__item-choose
+                                        input(type="checkbox" )
+                                        label(for="") Vừa
+                                    .filter__item-choose
+                                        input(type="checkbox" )
+                                        label(for="") Lớn
+                .section-product__right
+                    .section-product__head
+                        h1.section-product__title Chó nhỏ
+                        button.section-product__filter 
+                            i.fa-solid.fa-filter 
+                            | Bộ lọc
+                    .section-product__list
+                        +product-item()
+                        +product-item()
+                        +product-item()
+                        +product-item()
+                        +product-item()
+                        +product-item()
+                        +product-item()
+                        +product-item()
+                        +product-item()
+
+                    .section-product__pagination
+                        .pagination 
+                            button.pagination_button 
+                                i.fa-solid.fa-arrow-left
+                            button.pagination_button.pagination_button--active  1
+                            button.pagination_button  2
+                            button.pagination_button  3
+                            button.pagination_button  4
+                            button.pagination_button.pagination_button--disabled  ...
+                            button.pagination_button  28
+                            button.pagination_button  
+                                i.fa-solid.fa-arrow-right
+    //- end section-product

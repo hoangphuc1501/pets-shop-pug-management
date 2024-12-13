@@ -1,0 +1,8 @@
+mixin breakcumb(list, className="")
+    nav.box-Breadcrumb
+        div(class=className)
+            ul.box-Breadcrumb__list
+                each item in list
+                    li.box-Breadcrumb__item 
+                        a(href=item.link class='box-Breadcrumb__link') #{item.title}
+                        <i class="fa-solid fa-chevron-right"></i>
